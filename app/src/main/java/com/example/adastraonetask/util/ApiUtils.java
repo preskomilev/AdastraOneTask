@@ -6,7 +6,7 @@ public class ApiUtils {
 
     }
 
-    public static final String BASE_URL = "https://www.balldontlie.io/api/v1/players/";
+    public static final String BASE_URL = "https://www.balldontlie.io/api/v1/";
 
     public static ApiService getAPIService() {
 
