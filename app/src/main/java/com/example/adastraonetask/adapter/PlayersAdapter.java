@@ -13,6 +13,9 @@ import com.example.adastraonetask.entities.Player;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.PlayerViewHolder> {
 
     private List<Player> players;
@@ -25,33 +28,23 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.PlayerVi
     }
 
     public static class PlayerViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout playerLayout;
-        TextView firstName;
-        TextView lastName;
-        TextView position;
-        TextView team;
 
+        @BindView(R.id.player_layout)
+        LinearLayout playerLayout;
+        @BindView(R.id.firstName)
+        TextView firstName;
+        @BindView(R.id.lastName)
+        TextView lastName;
+        @BindView(R.id.position)
+        TextView position;
+        @BindView(R.id.team)
+        TextView team;
 
         public PlayerViewHolder(View v) {
             super(v);
 
-            playerLayout = (LinearLayout) v.findViewById(R.id.player_layout);
-            firstName = (TextView) v.findViewById(R.id.firstName);
-            lastName = (TextView) v.findViewById(R.id.lastName);
-            position = (TextView) v.findViewById(R.id.position);
-            team = (TextView) v.findViewById(R.id.team);
-
-//            v.setOnClickListener(this);
-
+            ButterKnife.bind(this, v);
         }
-
-//        @Override
-//        public void onClick(View v) {
-//
-//            Player player = players.get(getAdapterPosition());
-////            listener.onFileTargetClicked(file);
-//
-//        }
 
     }
 
@@ -59,20 +52,13 @@ public class PlayersAdapter extends RecyclerView.Adapter<PlayersAdapter.PlayerVi
         this.players = players;
         this.rowLayout = rowLayout;
         this.context = context;
-//        this.itemClickListener = itemClickListener;
     }
 
     @Override
     public PlayersAdapter.PlayerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
         final PlayerViewHolder viewHolder = new PlayerViewHolder(view);
-//        final int pos = viewHolder.getAdapterPosition();
-//        view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                itemClickListener.onItemClick(players.get(pos));
-//            }
-//        });
+
         return new PlayerViewHolder(view);
     }
 
