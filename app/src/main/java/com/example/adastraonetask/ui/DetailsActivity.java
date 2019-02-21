@@ -1,14 +1,13 @@
 package com.example.adastraonetask.ui;
 
 import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.adastraonetask.R;
 import com.example.adastraonetask.entities.Team;
 import com.google.gson.Gson;
 
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
